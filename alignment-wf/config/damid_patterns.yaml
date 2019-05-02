@@ -1,0 +1,27 @@
+fastq: '{sample_dir}/{sample}/{sample}_R1.fastq.gz'
+cutadapt: '{sample_dir}/{sample}/{sample}_R1.cutadapt.fastq.gz'
+bam: '{sample_dir}/{sample}/{sample}.cutadapt.bam'
+
+fastqc:
+  raw: '{sample_dir}/{sample}/fastqc/{sample}_R1.fastq.gz_fastqc.zip'
+  cutadapt: '{sample_dir}/{sample}/fastqc/{sample}_R1.cutadapt.fastq.gz_fastqc.zip'
+  bam: '{sample_dir}/{sample}/fastqc/{sample}.cutadapt.nodups.bam_fastqc.zip'
+
+libsizes:
+  fastq:   '{sample_dir}/{sample}/{sample}_R1.fastq.gz.libsize'
+  cutadapt: '{sample_dir}/{sample}/{sample}_R1.cutadapt.fastq.gz.libsize'
+  bam:     '{sample_dir}/{sample}/{sample}.cutadapt.bam.libsize'
+  nodups: '{sample_dir}/{sample}/{sample}.cutadapt.nodups.bam.libsize'
+
+fastq_screen: '{sample_dir}/{sample}/{sample}.cutadapt.screen.txt'
+libsizes_table: '{agg_dir}/libsizes_table.tsv'
+libsizes_yaml: '{agg_dir}/libsizes_table_mqc.yaml'
+multiqc: '{agg_dir}/multiqc.html'
+
+markduplicates:
+  bam: '{sample_dir}/{sample}/{sample}.cutadapt.nodups.bam'
+  metrics: '{sample_dir}/{sample}/{sample}.cutadapt.nodups.bam.metrics'
+
+bigwig:
+  pos: '{sample_dir}/{sample}/{sample}.cutadapt.nodups.bam.pos.bigwig'
+  neg: '{sample_dir}/{sample}/{sample}.cutadapt.nodups.bam.neg.bigwig'
